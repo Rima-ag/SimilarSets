@@ -9,10 +9,14 @@ import java.util.*;
 
 public class APriori<T> {
 
+    //Adjust based on data used and data type in main
+    private final String filename = "in";
     private final Integer support1 = 100;
     private final Integer support2 = 50;
     private final Integer support3 = 50;
     private final Double confidence = 0.4;
+    //
+
     private HashSet<ItemSet<T>> candidates = new HashSet<>();
     private HashSet<String> basket = new HashSet<>();
     Set<ItemSet<T>> added = new HashSet<>();
@@ -35,25 +39,25 @@ public class APriori<T> {
     public void ones(){
         parseFile(1);
         filter(onecounters, onecandidates, support1);
-        System.out.println(onecandidates.size());
+        System.out.println("One items sets candidates count : " + onecandidates.size());
     }
 
     public void twos(){
         parseFile(2);
         filter(twocounters, twocandidates,support2);
         filterTwos();
-        System.out.println(twocandidates.size());
+        System.out.println("Two items sets candidates count : " + twocandidates.size());
     }
 
     public void threes(){
         parseFile(3);
         filter(threecounters, threecandidates, support3);
-        System.out.println(threecandidates.size());
+        System.out.println("Three items sets candidates count : " + threecandidates.size());
     }
 
     private void parseFile(Integer step){
         try {
-            File myObj = new File("in");
+            File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
