@@ -1,5 +1,5 @@
 cin = open('./bread basket.txt', 'r')
-cout = open('./in', 'w')
+cout = open('./inBread', 'w')
 
 current = "1"
 for line in cin:

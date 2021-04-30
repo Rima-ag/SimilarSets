@@ -9,8 +9,8 @@ import java.util.*;
 
 public class APriori<T> {
 
-    //Adjust based on data used and data type in main
-    private final String filename = "in";
+    //Adjust based on data used and data type inBread main
+    private final String filename = "inBread";
     private final Integer support1 = 100;
     private final Integer support2 = 50;
     private final Integer support3 = 50;
